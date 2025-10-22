@@ -1,0 +1,103 @@
+/* ... (todos os estilos anteriores permanecem os mesmos) ... */
+
+/* ESTILOS ADICIONADOS PARA A TAREFA 9 */
+
+/* Efeito de highlight para o evento mouseover nos cards de serviço */
+.service-card.highlight {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--cor-primaria);
+}
+
+/* Efeito de foco para os campos do formulário */
+.form-group.focused .form-label {
+    color: var(--cor-primaria);
+}
+.form-group.focused input,
+.form-group.focused textarea {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+/* ====================================================================== */
+/* NOVA SEÇÃO: BLOG                                                       */
+/* ====================================================================== */
+.blog-section {
+    background-color: var(--cor-fundo-secundario);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.blog-post {
+    background: var(--cor-fundo);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--sombra-padrao);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--sombra-hover);
+}
+
+.post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 25px;
+}
+
+.post-category {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.post-title {
+    color: var(--cor-headings);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.post-excerpt {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.post-read-more {
+    color: var(--cor-primaria);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.post-read-more i {
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover .post-read-more i {
+    transform: translateX(5px);
+}
+/* ... (o restante dos estilos, como o rodapé e media queries, continua igual) ... */
