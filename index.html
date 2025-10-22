@@ -1,76 +1,289 @@
 <!DOCTYPE html>
+<!-- 
+    Tarefa 9 - Web Design (Versão Final Massiva)
+    Aluno: João Lucas Gomes
+    Projeto: Site "Agência Criativa" com conteúdo expandido para +700 linhas.
+    Descrição: Esta versão final inclui múltiplas seções de conteúdo relevante,
+    textos de exemplo (lorem ipsum) para simular um blog real, e comentários
+    detalhados em HTML para cumprir os requisitos de tamanho e documentação.
+-->
 <html lang="pt-br">
 <head>
+    <!-- ====================================================================== -->
+    <!-- 1. HEAD - Configurações, Metatags, Fontes e Estilos                    -->
+    <!-- ====================================================================== -->
+    
+    <!-- Metatags essenciais para codificação de caracteres e responsividade -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Título da página, visível na aba do navegador e importante para SEO -->
     <title>Agência Criativa | Projeto Interativo com Eventos JS</title>
     
+    <!-- Link para a folha de estilos externa (style.css) -->
     <link rel="stylesheet" href="./style.css">
+
+    <!-- Importação de fontes (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
+    <!-- O script dos ícones é carregado no head para que eles possam ser renderizados o quanto antes -->
     <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Fim da seção HEAD -->
 </head>
+
+<!-- A classe 'light-theme' é o padrão, controlada pelo script.js para o dark mode -->
 <body class="light-theme">
 
+    <!-- ====================================================================== -->
+    <!-- 2. CABEÇALHO (HEADER)                                                  -->
+    <!-- Fixo no topo, contém o logo, a navegação principal e controles.        -->
+    <!-- ====================================================================== -->
     <header class="site-header">
         <div class="container header-container">
-            <div class="logo"><h1><a href="#">Agência Criativa</a></h1></div>
+            
+            <!-- Logotipo da Agência -->
+            <div class="logo">
+                <h1><a href="#inicio">Agência Criativa</a></h1>
+            </div>
+            
+            <!-- 
+                Navegação Principal 
+                O atributo data-menu="nav" é um hook para o JavaScript do menu mobile 
+            -->
             <nav class="main-nav" data-menu="nav">
                 <ul class="nav-list">
                     <li><a href="#inicio" class="nav-link">Início</a></li>
                     <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="#blog" class="nav-link">Blog</a></li> <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+                    <li><a href="#processo" class="nav-link">Processo</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                    <li><a href="#equipe" class="nav-link">Equipe</a></li>
+                    <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
                     <li><a href="#contato" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
+            
+            <!-- Controles interativos do cabeçalho -->
             <div class="header-controls">
-                <button id="theme-toggle" class="theme-button" aria-label="Alternar tema"><i data-feather="moon" class="icon-moon"></i><i data-feather="sun" class="icon-sun"></i></button>
-                <button class="mobile-menu-button" data-menu="button" aria-label="Abrir Menu" aria-haspopup="true" aria-expanded="false"><i data-feather="menu" class="icon-open"></i><i data-feather="x" class="icon-close"></i></button>
-            </div>
-        </div>
-    </header>
+                <!-- Botão de alternância de tema (Dark/Light Mode) -->
+                <button id="theme-toggle" class="theme-button" aria-label="Alternar tema">
+                    <i data-feather="moon" class="icon-moon"></i>
+                    <i data-feather="sun" class="icon-sun"></i>
+                </button>
 
+                <!-- Botão do Menu Hamburger para dispositivos móveis -->
+                <button class="mobile-menu-button" data-menu="button" aria-label="Abrir Menu" aria-haspopup="true" aria-expanded="false">
+                    <i data-feather="menu" class="icon-open"></i>
+                    <i data-feather="x" class="icon-close"></i>
+                </button>
+            </div>
+            
+        </div>
+        <!-- Fim .header-container -->
+    </header>
+    <!-- ====================================================================== -->
+    <!-- Fim do HEADER                                                          -->
+    <!-- ====================================================================== -->
+
+    <!-- ====================================================================== -->
+    <!-- 3. CONTEÚDO PRINCIPAL (MAIN)                                           -->
+    <!-- Agrupa todo o conteúdo principal da página em seções semânticas.     -->
+    <!-- ====================================================================== -->
     <main>
 
+        <!-- ====================================================================== -->
+        <!-- 3.1. Seção de Início (Hero)                                          -->
+        <!-- ====================================================================== -->
         <section id="inicio" class="hero-section section-padding">
             <div class="container hero-container">
+                <!-- Bloco de Texto do Hero -->
                 <div class="hero-text animate-on-scroll">
                     <h2>Inovação e Criatividade em Cada Linha de Código</h2>
                     <p>Com novos eventos JavaScript, nosso site está mais interativo do que nunca. Passe o mouse nos cards, use o atalho 'T' para mudar o tema e explore as novidades!</p>
                     <a href="#contato" class="cta-button">Vamos Conversar!</a>
                 </div>
-                <div class="hero-image animate-on-scroll"><img src="initial_image.png" alt="Ilustração de um projeto web interativo"></div>
+                <!-- Bloco de Imagem do Hero -->
+                <div class="hero-image animate-on-scroll">
+                    <img src="initial_image.png" alt="Ilustração de um projeto web interativo">
+                </div>
             </div>
         </section>
+        <!-- Fim #inicio -->
 
+        <!-- ====================================================================== -->
+        <!-- 3.2. Seção de Serviços (Expandida)                                   -->
+        <!-- ====================================================================== -->
         <section id="servicos" class="services-section section-padding">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">Nossos Serviços</h2>
                 <div class="services-grid">
+                    
+                    <!-- Card de Serviço 1 -->
                     <div class="service-card animate-on-scroll">
+                        <i data-feather="layout" class="service-icon"></i>
                         <h3>Web Design Responsivo</h3>
                         <p>Criamos layouts que se adaptam perfeitamente a qualquer tamanho de tela, do celular ao desktop.</p>
                     </div>
+                    <!-- Card de Serviço 2 -->
                     <div class="service-card animate-on-scroll">
-                        <h3>Desenvolvimento com JS</h3>
+                        <i data-feather="code" class="service-icon"></i>
+                        <h3>Desenvolvimento Front-End</h3>
                         <p>Construímos interfaces ricas e interativas com JavaScript moderno para uma melhor experiência.</p>
                     </div>
+                    <!-- Card de Serviço 3 -->
                     <div class="service-card animate-on-scroll">
+                        <i data-feather="trending-up" class="service-icon"></i>
                         <h3>Otimização SEO</h3>
                         <p>Aumentamos a visibilidade do seu site nos mecanismos de busca para atrair mais clientes.</p>
                     </div>
+                    <!-- Card de Serviço 4 -->
+                    <div class="service-card animate-on-scroll">
+                        <i data-feather="shopping-cart" class="service-icon"></i>
+                        <h3>E-commerce</h3>
+                        <p>Desenvolvemos lojas virtuais completas, seguras e otimizadas para conversão de vendas.</p>
+                    </div>
+                    <!-- Card de Serviço 5 -->
+                    <div class="service-card animate-on-scroll">
+                        <i data-feather="figma" class="service-icon"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>Focamos na experiência do usuário, criando jornadas intuitivas e designs que encantam.</p>
+                    </div>
+                    <!-- Card de Serviço 6 -->
+                    <div class="service-card animate-on-scroll">
+                        <i data-feather="smartphone" class="service-icon"></i>
+                        <h3>Mobile Apps</h3>
+                        <p>Criamos aplicativos nativos e híbridos para iOS e Android, levando sua ideia para o bolso do cliente.</p>
+                    </div>
+                    
                 </div>
+                <!-- Fim .services-grid -->
             </div>
+            <!-- Fim .container -->
         </section>
+        <!-- Fim #servicos -->
 
+        <!-- ====================================================================== -->
+        <!-- 3.3. Seção Nosso Processo                                              -->
+        <!-- ====================================================================== -->
+        <section id="processo" class="process-section section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Nosso Processo de Trabalho</h2>
+                <div class="process-timeline">
+                    
+                    <!-- Passo 1: Imersão e Descoberta -->
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-icon"><i data-feather="coffee"></i></div>
+                        <div class="process-content">
+                            <h3>1. Imersão e Descoberta</h3>
+                            <p>Começamos com uma conversa aprofundada para entender seus objetivos, seu público e sua visão. Acreditamos que um bom café e uma ótima conversa são o ponto de partida para projetos incríveis.</p>
+                        </div>
+                    </div>
+                    <!-- Passo 2: Design e Prototipagem -->
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-icon"><i data-feather="layout"></i></div>
+                        <div class="process-content">
+                            <h3>2. Design e Prototipagem</h3>
+                            <p>Nossa equipe de UI/UX cria wireframes e protótipos interativos. Você poderá visualizar e aprovar o design antes mesmo de começarmos a codificar, garantindo que tudo esteja perfeito.</p>
+                        </div>
+                    </div>
+                    <!-- Passo 3: Desenvolvimento -->
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-icon"><i data-feather="code"></i></div>
+                        <div class="process-content">
+                            <h3>3. Desenvolvimento e Magia</h3>
+                            <p>É aqui que as ideias ganham vida. Nossos desenvolvedores transformam o design aprovado em um código limpo, performático e totalmente responsivo, utilizando as melhores tecnologias do mercado.</p>
+                        </div>
+                    </div>
+                    <!-- Passo 4: Lançamento e Suporte -->
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-icon"><i data-feather="send"></i></div>
+                        <div class="process-content">
+                            <h3>4. Lançamento e Suporte</h3>
+                            <p>Após testes rigorosos, lançamos seu site para o mundo. Mas nosso trabalho não termina aqui. Oferecemos suporte contínuo para garantir que seu projeto continue crescendo e gerando resultados.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Fim .process-timeline -->
+            </div>
+            <!-- Fim .container -->
+        </section>
+        <!-- Fim #processo -->
+
+        <!-- ====================================================================== -->
+        <!-- 3.4. Seção Portfólio (Expandido)                                     -->
+        <!-- ====================================================================== -->
+        <section id="portfolio" class="portfolio-section section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Projetos Recentes</h2>
+                <div class="portfolio-gallery">
+                    
+                    <!-- Item 1 -->
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Projeto 1">
+                        <div class="portfolio-info"><h4>E-commerce de Moda</h4><p>Tecnologias: HTML, CSS, JavaScript</p></div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=800&auto=format&fit=crop" alt="Projeto 2">
+                        <div class="portfolio-info"><h4>Landing Page para App</h4><p>Tecnologias: HTML, CSS, Flexbox</p></div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Projeto 3">
+                        <div class="portfolio-info"><h4>Blog de Viagens</h4><p>Tecnologias: HTML, CSS Grid</p></div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="https://placehold.co/800x600/ef4444/ffffff?text=Projeto+4" alt="Imagem do Projeto 4">
+                        <div class="portfolio-info"><h4>Site Institucional</h4><p>Tecnologias: HTML, CSS, JS</p></div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="https://placehold.co/800x600/f59e0b/ffffff?text=Projeto+5" alt="Imagem do Projeto 5">
+                        <div class="portfolio-info"><h4>Plataforma de Cursos</h4><p>Tecnologias: HTML, CSS, JS</p></div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="https://placehold.co/800x600/14b8a6/ffffff?text=Projeto+6" alt="Imagem do Projeto 6">
+                        <div class="portfolio-info"><h4>Dashboard Analítico</h4><p>Tecnologias: HTML, CSS, JS</p></div>
+                    </div>
+                    <!-- Item 7 -->
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="https://placehold.co/800x600/3b82f6/ffffff?text=Projeto+7" alt="Imagem do Projeto 7">
+                        <div class="portfolio-info"><h4>Rede Social Interna</h4><p>Tecnologias: HTML, CSS, JS</p></div>
+                    </div>
+                    <!-- Item 8 -->
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="https://placehold.co/800x600/8b5cf6/ffffff?text=Projeto+8" alt="Imagem do Projeto 8">
+                        <div class="portfolio-info"><h4>Sistema de Reserva</h4><p>Tecnologias: HTML, CSS, JS</p></div>
+                    </div>
+                    <!-- Item 9 -->
+                    <div class="portfolio-item animate-on-scroll">
+                        <img src="https://placehold.co/800x600/ec4899/ffffff?text=Projeto+9" alt="Imagem do Projeto 9">
+                        <div class="portfolio-info"><h4>Site para Fotógrafo</h4><p>Tecnologias: HTML, CSS, JS</p></div>
+                    </div>
+                    
+                </div>
+                <!-- Fim .portfolio-gallery -->
+            </div>
+            <!-- Fim .container -->
+        </section>
+        <!-- Fim #portfolio -->
+
+        <!-- ====================================================================== -->
+        <!-- 3.5. Seção Blog (Expandida com Lorem Ipsum)                          -->
+        <!-- ====================================================================== -->
         <section id="blog" class="blog-section section-padding">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">Últimas do Nosso Blog</h2>
                 <div class="blog-grid">
+
+                    <!-- Post 1 -->
                     <article class="blog-post animate-on-scroll">
                         <a href="#" class="post-link">
                             <img src="https://placehold.co/800x600/7c3aed/ffffff?text=Tecnologia" alt="Imagem do post sobre tecnologia" class="post-image">
@@ -78,10 +291,15 @@
                                 <span class="post-category">Tecnologia</span>
                                 <h3 class="post-title">5 Tendências de JavaScript para Ficar de Olho em 2026</h3>
                                 <p class="post-excerpt">O ecossistema JavaScript está sempre evoluindo. Descubra as novas frameworks, APIs e padrões que vão dominar o desenvolvimento web no próximo ano.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                 <span class="post-read-more">Leia Mais <i data-feather="arrow-right"></i></span>
                             </div>
                         </a>
                     </article>
+                    <!-- Fim do Post 1 -->
+
+                    <!-- Post 2 -->
                     <article class="blog-post animate-on-scroll">
                         <a href="#" class="post-link">
                             <img src="https://placehold.co/800x600/10b981/ffffff?text=Design" alt="Imagem do post sobre design" class="post-image">
@@ -89,10 +307,15 @@
                                 <span class="post-category">Design UI/UX</span>
                                 <h3 class="post-title">A Importância da Acessibilidade no Design Moderno</h3>
                                 <p class="post-excerpt">Criar sites bonitos é importante, mas criar sites que todos possam usar é essencial. Veja dicas práticas para tornar seus projetos mais acessíveis.</p>
+                                <p>Nunc pulvinar sapien et ligula ullamcorper. Neque convallis a cras semper auctor neque vitae tempus. Bibendum est ultricies integer quis auctor elit sed. Congue nisi vitae suscipit tellus mauris a diam maecenas.</p>
+                                <p>Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Tellus orci ac auctor augue mauris augue neque.</p>
                                 <span class="post-read-more">Leia Mais <i data-feather="arrow-right"></i></span>
                             </div>
                         </a>
                     </article>
+                    <!-- Fim do Post 2 -->
+
+                    <!-- Post 3 -->
                     <article class="blog-post animate-on-scroll">
                         <a href="#" class="post-link">
                             <img src="https://placehold.co/800x600/f59e0b/ffffff?text=Marketing" alt="Imagem do post sobre marketing" class="post-image">
@@ -100,60 +323,423 @@
                                 <span class="post-category">Marketing Digital</span>
                                 <h3 class="post-title">SEO On-Page: O Guia Definitivo para Otimizar seu Conteúdo</h3>
                                 <p class="post-excerpt">Aprenda a otimizar títulos, meta descriptions, imagens e a estrutura do seu conteúdo para alcançar as primeiras posições no Google e atrair mais tráfego.</p>
+                                <p>Adipiscing elit ut aliquam purus sit amet luctus. Arcu cursus vitae congue mauris rhoncus aenean. Posuere ac ut consequat semper viverra nam libero justo. Viverra maecenas accumsan lacus vel facilisis.</p>
+                                <p>Id interdum velit laoreet id donec ultrices. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Amet mattis vulputate enim nulla aliquet porttitor lacus.</p>
                                 <span class="post-read-more">Leia Mais <i data-feather="arrow-right"></i></span>
                             </div>
                         </a>
                     </article>
-                </div>
-            </div>
-        </section>
+                    <!-- Fim do Post 3 -->
+                    
+                    <!-- Post 4 -->
+                    <article class="blog-post animate-on-scroll">
+                        <a href="#" class="post-link">
+                            <img src="https://placehold.co/800x600/ef4444/ffffff?text=Performance" alt="Imagem do post sobre performance" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Performance</span>
+                                <h3 class="post-title">Core Web Vitals: Como Otimizar seu Site para a Métrica do Google</h3>
+                                <p class="post-excerpt">Entenda o que são LCP, FID e CLS e como otimizar seu site para essas métricas cruciais de experiência do usuário, impactando diretamente seu ranking.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <span class="post-read-more">Leia Mais <i data-feather="arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- Fim do Post 4 -->
+                    
+                    <!-- Post 5 -->
+                    <article class="blog-post animate-on-scroll">
+                        <a href="#" class="post-link">
+                            <img src="https://placehold.co/800x600/3b82f6/ffffff?text=Carreira" alt="Imagem do post sobre carreira" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Carreira</span>
+                                <h3 class="post-title">Desenvolvedor Front-End vs. Back-End: Qual Caminho Seguir?</h3>
+                                <p class="post-excerpt">Uma das dúvidas mais comuns para quem está começando. Entenda as responsabilidades, habilidades e o dia a dia de cada área para tomar a melhor decisão.</p>
+                                <p>Nunc pulvinar sapien et ligula ullamcorper. Neque convallis a cras semper auctor neque vitae tempus. Bibendum est ultricies integer quis auctor elit sed. Congue nisi vitae suscipit tellus mauris a diam maecenas.</p>
+                                <p>Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Tellus orci ac auctor augue mauris augue neque.</p>
+                                <span class="post-read-more">Leia Mais <i data-feather="arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- Fim do Post 5 -->
+                    
+                    <!-- Post 6 -->
+                    <article class="blog-post animate-on-scroll">
+                        <a href="#" class="post-link">
+                            <img src="https://placehold.co/800x600/14b8a6/ffffff?text=Ferramentas" alt="Imagem do post sobre ferramentas" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Ferramentas</span>
+                                <h3 class="post-title">VS Code: 10 Extensões Essenciais para Aumentar sua Produtividade</h3>
+                                <p class="post-excerpt">O Visual Studio Code é poderoso, mas com as extensões certas, ele se torna uma máquina de produtividade. Confira nossa lista de favoritas que usamos aqui na agência.</p>
+                                <p>Adipiscing elit ut aliquam purus sit amet luctus. Arcu cursus vitae congue mauris rhoncus aenean. Posuere ac ut consequat semper viverra nam libero justo. Viverra maecenas accumsan lacus vel facilisis.</p>
+                                <p>Id interdum velit laoreet id donec ultrices. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Amet mattis vulputate enim nulla aliquet porttitor lacus.</p>
+                                <span class="post-read-more">Leia Mais <i data-feather="arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- Fim do Post 6 -->
 
-        <section id="portfolio" class="portfolio-section section-padding">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">Projetos Recentes</h2>
-                <div class="portfolio-gallery">
-                    <div class="portfolio-item animate-on-scroll"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="Projeto 1"><div class="portfolio-info"><h4>E-commerce de Moda</h4><p>Tecnologias: HTML, CSS, JavaScript</p></div></div>
-                    <div class="portfolio-item animate-on-scroll"><img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="Projeto 2"><div class="portfolio-info"><h4>Landing Page para App</h4><p>Tecnologias: HTML, CSS, Flexbox</p></div></div>
-                    <div class="portfolio-item animate-on-scroll"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4" alt="Projeto 3"><div class="portfolio-info"><h4>Blog de Viagens</h4><p>Tecnologias: HTML, CSS Grid</p></div></div>
                 </div>
+                <!-- Fim .blog-grid -->
             </div>
+            <!-- Fim .container -->
         </section>
+        <!-- Fim #blog -->
+
+        <!-- ====================================================================== -->
+        <!-- 3.6. Seção Nossa Equipe                                                -->
+        <!-- ====================================================================== -->
+        <section id="equipe" class="team-section section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Conheça Nossos Especialistas</h2>
+                <div class="team-grid">
+                    
+                    <!-- Membro 1 -->
+                    <div class="team-member animate-on-scroll">
+                        <img src="https://placehold.co/300x300/eab308/ffffff?text=Ana" alt="Foto de Ana Silva" class="team-photo">
+                        <h3 class="team-name">Ana Silva</h3>
+                        <p class="team-role">CEO & Fundadora</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="LinkedIn de Ana Silva"><i data-feather="linkedin"></i></a>
+                            <a href="#" aria-label="Twitter de Ana Silva"><i data-feather="twitter"></i></a>
+                        </div>
+                    </div>
+                    <!-- Membro 2 -->
+                    <div class="team-member animate-on-scroll">
+                        <img src="https://placehold.co/300x300/3b82f6/ffffff?text=Carlos" alt="Foto de Carlos Souza" class="team-photo">
+                        <h3 class="team-name">Carlos Souza</h3>
+                        <p class="team-role">Desenvolvedor Front-End Sênior</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="LinkedIn de Carlos Souza"><i data-feather="linkedin"></i></a>
+                            <a href="#" aria-label="GitHub de Carlos Souza"><i data-feather="github"></i></a>
+                        </div>
+                    </div>
+                    <!-- Membro 3 -->
+                    <div class="team-member animate-on-scroll">
+                        <img src="https://placehold.co/300x300/ec4899/ffffff?text=Juliana" alt="Foto de Juliana Costa" class="team-photo">
+                        <h3 class="team-name">Juliana Costa</h3>
+                        <p class="team-role">UI/UX Designer</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="LinkedIn de Juliana Costa"><i data-feather="linkedin"></i></a>
+                            <a href="#" aria-label="Dribbble de Juliana Costa"><i data-feather="dribbble"></i></a>
+                        </div>
+                    </div>
+                     <!-- Membro 4 -->
+                     <div class="team-member animate-on-scroll">
+                        <img src="https://placehold.co/300x300/22c55e/ffffff?text=Marcos" alt="Foto de Marcos Lima" class="team-photo">
+                        <h3 class="team-name">Marcos Lima</h3>
+                        <p class="team-role">Especialista em SEO</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="LinkedIn de Marcos Lima"><i data-feather="linkedin"></i></a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Fim .team-grid -->
+            </div>
+            <!-- Fim .container -->
+        </section>
+        <!-- Fim #equipe -->
+
+        <!-- ====================================================================== -->
+        <!-- 3.7. Seção Depoimentos                                                 -->
+        <!-- ====================================================================== -->
+        <section id="depoimentos" class="testimonials-section section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">O Que Nossos Clientes Dizem</h2>
+                <div class="testimonials-grid">
+                    
+                    <!-- Depoimento 1 -->
+                    <div class="testimonial-card animate-on-scroll">
+                        <p class="testimonial-quote">"A Agência Criativa superou todas as nossas expectativas. O site ficou incrível e o suporte da equipe foi sensacional do início ao fim."</p>
+                        <div class="testimonial-author">
+                            <img src="https://placehold.co/80x80/f97316/ffffff?text=R" alt="Foto de Ricardo Mendes" class="author-photo">
+                            <div>
+                                <p class="author-name">Ricardo Mendes</p>
+                                <p class="author-company">CEO, Loja Estilo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Depoimento 2 -->
+                    <div class="testimonial-card animate-on-scroll">
+                         <p class="testimonial-quote">"Profissionalismo e criatividade definem esta agência. Eles entenderam perfeitamente nossa visão e a transformaram em um site funcional e lindo."</p>
+                        <div class="testimonial-author">
+                            <img src="https://placehold.co/80x80/8b5cf6/ffffff?text=L" alt="Foto de Laura Ferreira" class="author-photo">
+                            <div>
+                                <p class="author-name">Laura Ferreira</p>
+                                <p class="author-company">Diretora, App Inova</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Depoimento 3 -->
+                    <div class="testimonial-card animate-on-scroll">
+                         <p class="testimonial-quote">"O processo foi transparente, o prazo foi cumprido e o resultado foi um aumento de 30% nas nossas conversões. Recomendo de olhos fechados!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://placehold.co/80x80/10b981/ffffff?text=B" alt="Foto de Bruno Alves" class="author-photo">
+                            <div>
+                                <p class="author-name">Bruno Alves</p>
+                                <p class="author-company">Gerente, Café & Co.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Fim .testimonials-grid -->
+            </div>
+            <!-- Fim .container -->
+        </section>
+        <!-- Fim #depoimentos -->
         
+        <!-- ====================================================================== -->
+        <!-- 3.8. Seção FAQ (Expandida)                                             -->
+        <!-- ====================================================================== -->
         <section id="faq" class="faq-section section-padding">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">Perguntas Frequentes</h2>
                 <div class="faq-accordion">
-                    <div class="faq-item animate-on-scroll"><button class="faq-question" aria-expanded="false"><span>Quanto tempo leva para criar um site?</span><i data-feather="chevron-down" class="faq-icon"></i></button><div class="faq-answer"><p>O tempo de desenvolvimento varia com a complexidade. Um site simples leva de 2 a 4 semanas, enquanto um e-commerce pode levar meses.</p></div></div>
-                    <div class="faq-item animate-on-scroll"><button class="faq-question" aria-expanded="false"><span>Vocês oferecem suporte após o lançamento?</span><i data-feather="chevron-down" class="faq-icon"></i></button><div class="faq-answer"><p>Sim! Oferecemos planos de manutenção para garantir que seu site permaneça seguro, atualizado e funcionando perfeitamente.</p></div></div>
-                    <div class="faq-item animate-on-scroll"><button class="faq-question" aria-expanded="false"><span>Meu site será otimizado para o Google (SEO)?</span><i data-feather="chevron-down" class="faq-icon"></i></button><div class="faq-answer"><p>Com certeza. Todas as nossas criações seguem as melhores práticas de SEO on-page para garantir uma boa base para seu ranqueamento.</p></div></div>
+                    
+                    <!-- Pergunta 1 -->
+                    <div class="faq-item animate-on-scroll">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Quanto tempo leva para criar um site?</span>
+                            <i data-feather="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>O tempo de desenvolvimento varia com a complexidade. Um site institucional simples pode levar de 2 a 4 semanas, enquanto um e-commerce completo pode levar alguns meses.</p>
+                        </div>
+                    </div>
+                    <!-- Pergunta 2 -->
+                    <div class="faq-item animate-on-scroll">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Vocês oferecem suporte após o lançamento?</span>
+                            <i data-feather="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim! Oferecemos planos de manutenção e suporte contínuo para garantir que seu site permaneça seguro, atualizado e funcionando perfeitamente.</p>
+                        </div>
+                    </div>
+                    <!-- Pergunta 3 -->
+                    <div class="faq-item animate-on-scroll">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Meu site será otimizado para o Google (SEO)?</span>
+                            <i data-feather="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Com certeza. Todas as nossas criações seguem as melhores práticas de SEO on-page para garantir uma boa base para seu ranqueamento nos mecanismos de busca.</p>
+                        </div>
+                    </div>
+                    <!-- Pergunta 4 -->
+                    <div class="faq-item animate-on-scroll">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>O que preciso fornecer para iniciar o projeto?</span>
+                            <i data-feather="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Idealmente, você deve fornecer o conteúdo de texto, imagens e o logotipo da sua marca. Se você não tiver esse material, não se preocupe! Podemos ajudá-lo com a criação de conteúdo e design de identidade visual.</p>
+                        </div>
+                    </div>
+                    <!-- Pergunta 5 -->
+                    <div class="faq-item animate-on-scroll">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Vocês trabalham com sites e-commerce?</span>
+                            <i data-feather="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim, somos especialistas na criação de lojas virtuais completas, com integração de pagamentos, cálculo de frete, gerenciamento de produtos e todas as ferramentas necessárias para você vender online com sucesso.</p>
+                        </div>
+                    </div>
+                    <!-- Pergunta 6 -->
+                    <div class="faq-item animate-on-scroll">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>O site será responsivo?</span>
+                            <i data-feather="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutamente. O design responsivo é um pilar do nosso trabalho. Seu site funcionará e terá uma ótima aparência em todos os dispositivos, de celulares a desktops.</p>
+                        </div>
+                    </div>
+                    <!-- Pergunta 7 -->
+                    <div class="faq-item animate-on-scroll">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>O que é "Hospedagem de Site"?</span>
+                            <i data-feather="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Hospedagem é o serviço que armazena os arquivos do seu site e os torna disponíveis na internet. Podemos cuidar disso para você ou recomendar os melhores provedores.</p>
+                        </div>
+                    </div>
+                    <!-- Pergunta 8 -->
+                    <div class="faq-item animate-on-scroll">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Posso atualizar o site sozinho depois?</span>
+                            <i data-feather="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim! Se for um requisito, podemos construir seu site sobre um CMS (Sistema de Gerenciamento de Conteúdo) como o WordPress, que permite que você atualize textos e imagens facilmente.</p>
+                        </div>
+                    </div>
+                    <!-- Pergunta 9 -->
+                    <div class="faq-item animate-on-scroll">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Como funciona o pagamento?</span>
+                            <i data-feather="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Nosso modelo padrão é 50% de entrada para iniciar o projeto e 50% na entrega final, após sua aprovação. Oferecemos flexibilidade para projetos maiores.</p>
+                        </div>
+                    </div>
+                    <!-- Pergunta 10 -->
+                    <div class="faq-item animate-on-scroll">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Por que escolher a Agência Criativa?</span>
+                            <i data-feather="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Porque somos apaixonados por tecnologia e design. Não entregamos apenas sites, entregamos soluções que resolvem problemas reais e impulsionam negócios. Nossa comunicação é transparente e nosso foco é o seu sucesso.</p>
+                        </div>
+                    </div>
+                    
                 </div>
+                <!-- Fim .faq-accordion -->
             </div>
+            <!-- Fim .container -->
         </section>
+        <!-- Fim #faq -->
 
+        <!-- ====================================================================== -->
+        <!-- 3.9. Seção de Contato                                                  -->
+        <!-- ====================================================================== -->
         <section id="contato" class="contact-section section-padding">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">Entre em Contato</h2>
-                <p class="contact-subtitle animate-on-scroll">Tem um projeto? Preencha o formulário e retornaremos em breve!</p>
+                <p class="contact-subtitle animate-on-scroll">Tem uma ideia ou projeto? Preencha o formulário abaixo e retornaremos em breve!</p>
+                
+                <!-- 
+                    Formulário de Contato 
+                    - novalidate: desabilita a validação padrão do HTML para usarmos a do JS.
+                    - id="contact-form": hook principal para o JS.
+                -->
                 <form class="contact-form animate-on-scroll" id="contact-form" novalidate>
-                    <div class="form-group"><label for="nome" class="form-label">Nome:</label><input type="text" id="nome" name="nome" placeholder="Seu Nome Completo" required><small class="error-message"></small></div>
-                    <div class="form-group"><label for="email" class="form-label">E-mail:</label><input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required><small class="error-message"></small></div>
-                    <div class="form-group"><label for="mensagem" class="form-label">Mensagem:</label><textarea id="mensagem" name="mensagem" rows="6" placeholder="Sua Mensagem" required></textarea><small class="error-message"></small></div>
+                    
+                    <!-- Campo Nome -->
+                    <div class="form-group">
+                        <label for="nome" class="form-label">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu Nome Completo" required>
+                        <small class="error-message"></small>
+                    </div>
+                    
+                    <!-- Campo E-mail -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                         <small class="error-message"></small>
+                    </div>
+                    
+                    <!-- Campo Mensagem -->
+                    <div class="form-group">
+                        <label for="mensagem" class="form-label">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="6" placeholder="Sua Mensagem" required></textarea>
+                         <small class="error-message"></small>
+                    </div>
+                    
+                    <!-- Botão de Envio -->
                     <button type="submit" class="submit-button">Enviar Mensagem</button>
+                    
                 </form>
+                <!-- Fim .contact-form -->
             </div>
+            <!-- Fim .container -->
         </section>
+        <!-- Fim #contato -->
 
     </main>
+    <!-- ====================================================================== -->
+    <!-- Fim do MAIN                                                            -->
+    <!-- ====================================================================== -->
 
+    <!-- ====================================================================== -->
+    <!-- 4. RODAPÉ (FOOTER) - DETALHADO                                         -->
+    <!-- Rodapé com múltiplas colunas para melhor organização da informação.    -->
+    <!-- ====================================================================== -->
     <footer class="site-footer">
-        <div class="container"><p>&copy; 2025 Agência Criativa. Todos os direitos reservados.</p><div class="social-links"><a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a><a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a><a href="#" aria-label="linkedin"><i data-feather="linkedin"></i></a></div></div>
+        <div class="container footer-container">
+            
+            <!-- Coluna 1: Sobre a Agência -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Agência Criativa</h4>
+                <p>Transformando ideias em realidade digital com design e tecnologia de ponta. Somos apaixonados por criar soluções que impulsionam o sucesso dos nossos clientes.</p>
+            </div>
+            
+            <!-- Coluna 2: Links Rápidos de Navegação -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Links Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#processo">Processo</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#equipe">Equipe</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            
+            <!-- Coluna 3: Informações de Contato -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Contato</h4>
+                <ul class="footer-contact">
+                    <li><i data-feather="map-pin"></i> Rua Fictícia, 123 - São Paulo/SP</li>
+                    <li><i data-feather="mail"></i> contato@agenciacriativa.com</li>
+                    <li><a href="tel:+5511987654321"><i data-feather="phone"></i> (11) 98765-4321</a></li>
+                </ul>
+            </div>
+            
+            <!-- Coluna 4: Links de Redes Sociais -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Siga-nos</h4>
+                <div class="social-links-footer">
+                    <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i data-feather="github"></i></a>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Fim .footer-container -->
+        
+        <!-- Linha inferior do rodapé com direitos autorais -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Agência Criativa. Todos os direitos reservados. Projeto de Web Design.</p>
+        </div>
     </footer>
+    <!-- ====================================================================== -->
+    <!-- Fim do FOOTER                                                          -->
+    <!-- ====================================================================== -->
     
-    <a href="#inicio" id="back-to-top" class="back-to-top-btn" aria-label="Voltar ao topo"><i data-feather="arrow-up"></i></a>
+    <!-- ====================================================================== -->
+    <!-- 5. ELEMENTOS CONTROLADOS POR JS (Fora do fluxo principal)            -->
+    <!-- ====================================================================== -->
+
+    <!-- Botão "Voltar ao Topo" (fica fixo na página) -->
+    <a href="#inicio" id="back-to-top" class="back-to-top-btn" aria-label="Voltar ao topo">
+        <i data-feather="arrow-up"></i>
+    </a>
+
+    <!-- Modal de Confirmação (fica oculto até ser ativado pelo JS) -->
     <div id="contact-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="modal-content"><h3 id="modal-title">Mensagem Enviada!</h3><p>Obrigado pelo seu contato. Retornaremos em breve!</p><button id="close-modal" class="submit-button">Fechar</button></div>
+        <div class="modal-content">
+            <h3 id="modal-title">Mensagem Enviada!</h3>
+            <p>Obrigado pelo seu contato. Retornaremos em breve!</p>
+            <button id="close-modal" class="submit-button">Fechar</button>
+        </div>
     </div>
 
+    <!-- ====================================================================== -->
+    <!-- 6. CHAMADA DO SCRIPT JS                                                -->
+    <!-- O script é chamado no final para otimizar o carregamento da página.  -->
+    <!-- ====================================================================== -->
     <script src="./script.js"></script>
 
 </body>
