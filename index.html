@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Agência Criativa | Projeto Interativo com Eventos JS</title>
+    
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="light-theme">
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo"><h1><a href="#">Agência Criativa</a></h1></div>
+            <nav class="main-nav" data-menu="nav">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li> <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button id="theme-toggle" class="theme-button" aria-label="Alternar tema"><i data-feather="moon" class="icon-moon"></i><i data-feather="sun" class="icon-sun"></i></button>
+                <button class="mobile-menu-button" data-menu="button" aria-label="Abrir Menu" aria-haspopup="true" aria-expanded="false"><i data-feather="menu" class="icon-open"></i><i data-feather="x" class="icon-close"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="hero-section section-padding">
+            <div class="container hero-container">
+                <div class="hero-text animate-on-scroll">
+                    <h2>Inovação e Criatividade em Cada Linha de Código</h2>
+                    <p>Com novos eventos JavaScript, nosso site está mais interativo do que nunca. Passe o mouse nos cards, use o atalho 'T' para mudar o tema e explore as novidades!</p>
+                    <a href="#contato" class="cta-button">Vamos Conversar!</a>
+                </div>
+                <div class="hero-image animate-on-scroll"><img src="initial_image.png" alt="Ilustração de um projeto web interativo"></div>
+            </div>
+        </section>
+
+        <section id="servicos" class="services-section section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Nossos Serviços</h2>
+                <div class="services-grid">
+                    <div class="service-card animate-on-scroll">
+                        <h3>Web Design Responsivo</h3>
+                        <p>Criamos layouts que se adaptam perfeitamente a qualquer tamanho de tela, do celular ao desktop.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <h3>Desenvolvimento com JS</h3>
+                        <p>Construímos interfaces ricas e interativas com JavaScript moderno para uma melhor experiência.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <h3>Otimização SEO</h3>
+                        <p>Aumentamos a visibilidade do seu site nos mecanismos de busca para atrair mais clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog-section section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Últimas do Nosso Blog</h2>
+                <div class="blog-grid">
+                    <article class="blog-post animate-on-scroll">
+                        <a href="#" class="post-link">
+                            <img src="https://placehold.co/800x600/7c3aed/ffffff?text=Tecnologia" alt="Imagem do post sobre tecnologia" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Tecnologia</span>
+                                <h3 class="post-title">5 Tendências de JavaScript para Ficar de Olho em 2026</h3>
+                                <p class="post-excerpt">O ecossistema JavaScript está sempre evoluindo. Descubra as novas frameworks, APIs e padrões que vão dominar o desenvolvimento web no próximo ano.</p>
+                                <span class="post-read-more">Leia Mais <i data-feather="arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-post animate-on-scroll">
+                        <a href="#" class="post-link">
+                            <img src="https://placehold.co/800x600/10b981/ffffff?text=Design" alt="Imagem do post sobre design" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Design UI/UX</span>
+                                <h3 class="post-title">A Importância da Acessibilidade no Design Moderno</h3>
+                                <p class="post-excerpt">Criar sites bonitos é importante, mas criar sites que todos possam usar é essencial. Veja dicas práticas para tornar seus projetos mais acessíveis.</p>
+                                <span class="post-read-more">Leia Mais <i data-feather="arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="blog-post animate-on-scroll">
+                        <a href="#" class="post-link">
+                            <img src="https://placehold.co/800x600/f59e0b/ffffff?text=Marketing" alt="Imagem do post sobre marketing" class="post-image">
+                            <div class="post-content">
+                                <span class="post-category">Marketing Digital</span>
+                                <h3 class="post-title">SEO On-Page: O Guia Definitivo para Otimizar seu Conteúdo</h3>
+                                <p class="post-excerpt">Aprenda a otimizar títulos, meta descriptions, imagens e a estrutura do seu conteúdo para alcançar as primeiras posições no Google e atrair mais tráfego.</p>
+                                <span class="post-read-more">Leia Mais <i data-feather="arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Projetos Recentes</h2>
+                <div class="portfolio-gallery">
+                    <div class="portfolio-item animate-on-scroll"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="Projeto 1"><div class="portfolio-info"><h4>E-commerce de Moda</h4><p>Tecnologias: HTML, CSS, JavaScript</p></div></div>
+                    <div class="portfolio-item animate-on-scroll"><img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="Projeto 2"><div class="portfolio-info"><h4>Landing Page para App</h4><p>Tecnologias: HTML, CSS, Flexbox</p></div></div>
+                    <div class="portfolio-item animate-on-scroll"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4" alt="Projeto 3"><div class="portfolio-info"><h4>Blog de Viagens</h4><p>Tecnologias: HTML, CSS Grid</p></div></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq" class="faq-section section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Perguntas Frequentes</h2>
+                <div class="faq-accordion">
+                    <div class="faq-item animate-on-scroll"><button class="faq-question" aria-expanded="false"><span>Quanto tempo leva para criar um site?</span><i data-feather="chevron-down" class="faq-icon"></i></button><div class="faq-answer"><p>O tempo de desenvolvimento varia com a complexidade. Um site simples leva de 2 a 4 semanas, enquanto um e-commerce pode levar meses.</p></div></div>
+                    <div class="faq-item animate-on-scroll"><button class="faq-question" aria-expanded="false"><span>Vocês oferecem suporte após o lançamento?</span><i data-feather="chevron-down" class="faq-icon"></i></button><div class="faq-answer"><p>Sim! Oferecemos planos de manutenção para garantir que seu site permaneça seguro, atualizado e funcionando perfeitamente.</p></div></div>
+                    <div class="faq-item animate-on-scroll"><button class="faq-question" aria-expanded="false"><span>Meu site será otimizado para o Google (SEO)?</span><i data-feather="chevron-down" class="faq-icon"></i></button><div class="faq-answer"><p>Com certeza. Todas as nossas criações seguem as melhores práticas de SEO on-page para garantir uma boa base para seu ranqueamento.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contact-section section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Entre em Contato</h2>
+                <p class="contact-subtitle animate-on-scroll">Tem um projeto? Preencha o formulário e retornaremos em breve!</p>
+                <form class="contact-form animate-on-scroll" id="contact-form" novalidate>
+                    <div class="form-group"><label for="nome" class="form-label">Nome:</label><input type="text" id="nome" name="nome" placeholder="Seu Nome Completo" required><small class="error-message"></small></div>
+                    <div class="form-group"><label for="email" class="form-label">E-mail:</label><input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required><small class="error-message"></small></div>
+                    <div class="form-group"><label for="mensagem" class="form-label">Mensagem:</label><textarea id="mensagem" name="mensagem" rows="6" placeholder="Sua Mensagem" required></textarea><small class="error-message"></small></div>
+                    <button type="submit" class="submit-button">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container"><p>&copy; 2025 Agência Criativa. Todos os direitos reservados.</p><div class="social-links"><a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a><a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a><a href="#" aria-label="linkedin"><i data-feather="linkedin"></i></a></div></div>
+    </footer>
+    
+    <a href="#inicio" id="back-to-top" class="back-to-top-btn" aria-label="Voltar ao topo"><i data-feather="arrow-up"></i></a>
+    <div id="contact-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content"><h3 id="modal-title">Mensagem Enviada!</h3><p>Obrigado pelo seu contato. Retornaremos em breve!</p><button id="close-modal" class="submit-button">Fechar</button></div>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
